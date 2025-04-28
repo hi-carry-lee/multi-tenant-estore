@@ -8,6 +8,8 @@ export const GET = async () => {
 
   const data = await payload.find({
     collection: "users",
+    // if it has deep embeded fields, then you can limit the depth
+    depth: 1,
   });
 
   return Response.json(data);
